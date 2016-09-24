@@ -8,6 +8,7 @@
             'hours': date.getHours(),
             'minutes': date.getMinutes(),
             'seconds': date.getSeconds(),
+            'speed': 1000
         };
         if (settings){$.extend(config, settings);}
 
@@ -56,7 +57,7 @@
     				config['hours'] += 1;
     			}
 				refresh_pointers();
-			}, 1000);
+			}, config['speed']);
 
         	$(this).addClass('analog-clock')
         });
