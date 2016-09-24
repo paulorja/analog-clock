@@ -3,6 +3,7 @@
   background: #ccc;
   border-radius:100%;
   position: relative;
+  border: 2px solid red;
 }
 
 .analog-clock-pointer-out {
@@ -20,28 +21,61 @@
   display: inline-block;
 }
 
+.analog-clock-hour-pointer, .analog-clock-min-pointer, .analog-clock-sec-pointer {
+	position: relative;
+	display: block;
+}
+
 .analog-clock-hour-pointer {
 	width: 100%;
-	position: relative;
-	height: 100%;
-	display: block;
+	height: 75%;
 	background: black;
+	top: 25%;
+	border-radius: 100% 100% 0% 0%;
 }
 
 .analog-clock-min-pointer {
 	width: 50%;
-	position: relative;
-	height: 100%;
-	display: block;
+	height: 82%;
+	top: 18%;
 	background: black;
 	margin-left: 25%;
+	border-radius: 100% 100% 0% 0%;
 }
 
 .analog-clock-sec-pointer {
 	width: 25%;
-	position: relative;
-	height: 100%;
-	display: block;
+	height: 82%;
+	top: 18%;
 	background: red;
 	margin-left: 37.5%;
+	border-radius: 100% 100% 0% 0%;
+}
+
+.clock-label-out {
+  	height: 100%;
+  	width: 100%;
+  	text-align: center;
+  	position: absolute;
+}
+
+.clock-label {
+  	display: inline-block;
+  	height: 10%;
+  	width: 10%;
+  	border-radius: 100%;
+  	border: solid 1px black;
+  	margin: 2%;
+  	position: relative;
+}
+
+.clock-center-bg {
+  	position: absolute;
+	width: 8%;
+	height: 8%;
+	background: black;
+	border-radius: 100%;
+	top: 46%;
+	left: 46%;
+	z-index: 999
 }

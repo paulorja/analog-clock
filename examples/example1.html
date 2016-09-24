@@ -7,10 +7,11 @@
 	<link rel="stylesheet" type="text/css" href="../analog_clock/analog_clock.css" />
 </head>
 <body>
-	<div id='clock'></div>
+	<div id='clock'><div class='clock-center-bg'></div></div>
 	<script>
 		$('#clock').analogClock({
-			speed: 10
+			speed: 1000,
+			size: 200
 		});
 	</script>
 </body>

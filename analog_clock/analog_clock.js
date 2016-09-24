@@ -39,13 +39,25 @@
     		seconds_pointer.css('transform', 'rotate('+config['seconds']*6+'deg)');
 		}
 
+		function clock_labels() {
+			var clock_labels = "";
+
+			for (var i = 1; i<=12 ; i++) {
+				clock_labels += '<div class="clock-label-out" style="transform: rotate('+(30*i)+'deg);"><div class="clock-label" style="transform: rotate(-'+(30*i)+'deg);">'+i+'</div></div>';
+			}
+
+			return clock_labels;
+		}
+
         //set clock size
         $(this).css({'height': config['size'], 'width': config['size']});
 
         return this.each(function(){
+        	$(this).addClass('analog-clock')
         	$(this).append(hour_pointer);
         	$(this).append(minutes_pointer);
         	$(this).append(seconds_pointer);
+        	$(this).append(clock_labels);
 
     		refresh_pointers();
     		setInterval(function(){ 
@@ -58,8 +70,6 @@
     			}
 				refresh_pointers();
 			}, config['speed']);
-
-        	$(this).addClass('analog-clock')
         });
     };
 
