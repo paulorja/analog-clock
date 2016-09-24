@@ -7,9 +7,29 @@
 	<link rel="stylesheet" type="text/css" href="../analog_clock/analog_clock.css" />
 </head>
 <body>
-	<div id='clock'></div>
+	<div id='clock1'></div>
+	<div id='clock2'></div>
+	<div id='clock3'></div>
 	<script>
-		$('#clock').analogClock();
+		$('#clock1').analogClock({
+			size:200
+		});
+
+		$('#clock2').analogClock({
+			size:400,
+			hours: 0,
+			minutes: 0,
+			seconds: 0,
+			speed: 2
+		});
+
+		$('#clock3').analogClock({
+			size:700,
+			hours: 0,
+			minutes: 0,
+			seconds: 0,
+			speed: 200
+		});
 	</script>
 </body>
 </html>
