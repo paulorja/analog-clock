@@ -49,6 +49,12 @@
 			return clock_labels;
 		}
 
+		function clock_center() {
+			return $('<div>', {
+		    			class: 'clock-center-bg',
+					});
+		}
+
         //set clock size
         $(this).css({'height': config['size'], 'width': config['size']});
 
@@ -58,6 +64,7 @@
         	$(this).append(minutes_pointer);
         	$(this).append(seconds_pointer);
         	$(this).append(clock_labels);
+        	$(this).append(clock_center);
 
     		refresh_pointers();
     		setInterval(function(){ 
