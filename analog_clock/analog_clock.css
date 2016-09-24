@@ -1,9 +1,14 @@
 
 .analog-clock {
+  position: relative;
+}
+
+.analog-clock-container {
   background: #ccc;
   border-radius:100%;
-  position: relative;
   border: 2px solid red;
+  height: 100%;
+  width: 100%;
 }
 
 .analog-clock-pointer-out {
@@ -82,5 +87,7 @@
 
 .toggle-clock-btn {
 	z-index: 10;
-	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	position: absolute;
 }

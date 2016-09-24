@@ -55,7 +55,7 @@
 		}
 
 		function toggle_clock() {
-			toggle_clock_btn.prev().toggle('slow');
+			toggle_clock_btn.prev().toggle();
 
 			if(toggle_clock_btn.html() == 'Esconder Relógio') {
 				toggle_clock_btn.html('Mostrar Relógio');
@@ -63,6 +63,10 @@
 				toggle_clock_btn.html('Esconder Relógio');
     		}
 		}
+
+		var clock_container = $('<div>', {
+			class: 'analog-clock-container',
+		});
 
 		var toggle_clock_btn = $('<button>', {
 			class: 'toggle-clock-btn',
@@ -73,12 +77,15 @@
 
         return this.each(function(){
         	$(this).addClass('analog-clock')
-        	$(this).append(hour_pointer);
-        	$(this).append(minutes_pointer);
-        	$(this).append(seconds_pointer);
-        	$(this).append(clock_labels);
-        	$(this).append(clock_center);
-        	$(this).after(toggle_clock_btn);
+
+        	$(this).append(clock_container);
+        	clock_container.append(hour_pointer);
+        	clock_container.append(minutes_pointer);
+        	clock_container.append(seconds_pointer);
+        	clock_container.append(clock_labels);
+        	clock_container.append(clock_center);
+        	
+        	$(this).append(toggle_clock_btn);
 
         	toggle_clock_btn.click(function() {
         		toggle_clock();
