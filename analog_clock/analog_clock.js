@@ -57,16 +57,16 @@
 		function toggle_clock() {
 			toggle_clock_btn.prev().toggle('slow');
 
-			if(toggle_clock_btn.html() == 'Hide') {
-				toggle_clock_btn.html('Show');
+			if(toggle_clock_btn.html() == 'Esconder Relógio') {
+				toggle_clock_btn.html('Mostrar Relógio');
     		} else {
-				toggle_clock_btn.html('Hide');
+				toggle_clock_btn.html('Esconder Relógio');
     		}
 		}
 
 		var toggle_clock_btn = $('<button>', {
 			class: 'toggle-clock-btn',
-		}).html('Hide');
+		}).html('Esconder Relógio');
 
         //set clock size
         $(this).css({'height': config['size'], 'width': config['size']});
