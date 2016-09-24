@@ -4,8 +4,8 @@ A analog clock, based on jQuery. [Demo](https://cdn.rawgit.com/paulorja/analog-c
 ## Install
 
 ```
-<link rel="stylesheet" href="analog_clock/analog_clock.css">
-<script src="analog_clock/analog_clock.js"></script>
+<link rel="stylesheet" href="analog_clock.css">
+<script src="analog_clock.js"></script>
 ```
 
 ## Use
@@ -20,11 +20,13 @@ $('#clock').analogClock({
 
 ## Options
 ```
-size: size in pixels
-speed: clock speed in milliseconds
-hours: start hour
-minutes: start minute
-seconds: start second
+int size: size in pixels
+int speed: clock speed in milliseconds
+int hours: start hour
+int minutes: start minute
+int seconds: start second
+boolean animate: animate clock
+boolean toggleBtn: show or hide toggle clock btn
 ```
 
 Example 1
