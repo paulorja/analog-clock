@@ -42,7 +42,9 @@
 			var clock_labels = "";
 
 			for (var i = 1; i<=12 ; i++) {
-				clock_labels += '<div class="clock-label-out" style="transform: rotate('+(30*i)+'deg);"><div class="clock-label" style="transform: rotate(-'+(30*i)+'deg);">'+i+'</div></div>';
+				clock_labels += '<div class="clock-label-out" style="transform: rotate('+(30*i)+'deg);">';
+				clock_labels += '<div class="clock-label" style="transform: rotate(-'+(30*i)+'deg); font-size: '+config['size']*0.08+'px;">'+i+'</div>';
+				clock_labels += '</div>';
 			}
 
 			return clock_labels;

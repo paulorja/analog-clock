@@ -1,29 +1,29 @@
 
 .analog-clock {
-  position: relative;
+	position: relative;
 }
 
 .analog-clock-container {
-  background: #ccc;
-  border-radius:100%;
-  border: 2px solid red;
-  height: 100%;
-  width: 100%;
+	background: #ccc;
+	border-radius:100%;
+	border: 2px solid red;
+	height: 100%;
+	width: 100%;
 }
 
 .analog-clock-pointer-out {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  transform: rotate(0deg);
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	transform: rotate(0deg);
 }
 
 .analog-clock-pointer {
-  height: 50%;
-  width: 4%;
-  margin-left: 48%;
-  /*background: black;*/
-  display: inline-block;
+	height: 50%;
+	width: 4%;
+	margin-left: 48%;
+	/*background: black;*/
+	display: inline-block;
 }
 
 .analog-clock-hour-pointer, .analog-clock-min-pointer, .analog-clock-sec-pointer {
