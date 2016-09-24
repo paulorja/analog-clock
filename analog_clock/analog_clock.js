@@ -8,7 +8,8 @@
             'hours': date.getHours(),
             'minutes': date.getMinutes(),
             'seconds': date.getSeconds(),
-            'speed': 1000
+            'speed': 1000,
+            'animate': true
         };
         if (settings){$.extend(config, settings);}
 
@@ -94,16 +95,18 @@
         	});
 
     		refresh_pointers();
-    		setInterval(function(){ 
-    			config['seconds'] += 1;
-    			if(config['seconds'] % 60 == 0) {
-    				config['minutes'] += 1;
-    			}
-    			if(config['minutes'] % 60 == 0 && config['seconds'] % 60 == 0) {
-    				config['hours'] += 1;
-    			}
-				refresh_pointers();
-			}, config['speed']);
+    		if(config['animate']) {
+    			setInterval(function(){ 
+	    			config['seconds'] += 1;
+	    			if(config['seconds'] % 60 == 0) {
+	    				config['minutes'] += 1;
+	    			}
+	    			if(config['minutes'] % 60 == 0 && config['seconds'] % 60 == 0) {
+	    				config['hours'] += 1;
+	    			}
+					refresh_pointers();
+				}, config['speed']);
+    		}
         });
     };
 
