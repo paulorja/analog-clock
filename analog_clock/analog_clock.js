@@ -9,7 +9,8 @@
             'minutes': date.getMinutes(),
             'seconds': date.getSeconds(),
             'speed': 1000,
-            'animate': true
+            'animate': true,
+            'toggleBtn': true
         };
         if (settings){$.extend(config, settings);}
 
@@ -88,11 +89,14 @@
         	clock_container.append(clock_labels);
         	clock_container.append(clock_center);
         	
-        	$(this).append(toggle_clock_btn);
+        	if(config['toggleBtn']) {
+				$(this).append(toggle_clock_btn);
 
-        	toggle_clock_btn.click(function() {
-        		toggle_clock();
-        	});
+	        	toggle_clock_btn.click(function() {
+	        		toggle_clock();
+	        	});
+        	}
+        	
 
     		refresh_pointers();
     		if(config['animate']) {
