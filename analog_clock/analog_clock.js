@@ -32,6 +32,12 @@
 		var minutes_pointer = new_pointer('analog-clock-min-pointer');
 		var seconds_pointer = new_pointer('analog-clock-sec-pointer');
 
+		function refresh_pointers() {
+			hour_pointer.css('transform', 'rotate('+config['hours']*30+'deg)');
+    		minutes_pointer.css('transform', 'rotate('+config['minutes']*6+'deg)');
+    		seconds_pointer.css('transform', 'rotate('+config['seconds']*6+'deg)');
+		}
+
         //set clock size
         $(this).css({'height': config['size'], 'width': config['size']});
 
@@ -40,9 +46,17 @@
         	$(this).append(minutes_pointer);
         	$(this).append(seconds_pointer);
 
-    		hour_pointer.css('transform', 'rotate('+config['hours']*30+'deg)');
-    		minutes_pointer.css('transform', 'rotate('+config['minutes']*6+'deg)');
-    		seconds_pointer.css('transform', 'rotate('+config['seconds']*6+'deg)');
+    		refresh_pointers();
+    		setInterval(function(){ 
+    			config['seconds'] += 1;
+    			if(config['seconds'] % 60 == 0) {
+    				config['minutes'] += 1;
+    			}
+    			if(config['minutes'] % 60 == 0) {
+    				config['hours'] += 1;
+    			}
+				refresh_pointers();
+			}, 1000);
 
         	$(this).addClass('analog-clock')
         });
