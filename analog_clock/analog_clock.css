@@ -34,6 +34,7 @@
 	height: 100%;
 	display: block;
 	background: black;
+	margin-left: 25%;
 }
 
 .analog-clock-sec-pointer {
@@ -42,4 +43,5 @@
 	height: 100%;
 	display: block;
 	background: red;
+	margin-left: 37.5%;
 }
