@@ -52,7 +52,7 @@
     			if(config['seconds'] % 60 == 0) {
     				config['minutes'] += 1;
     			}
-    			if(config['minutes'] % 60 == 0) {
+    			if(config['minutes'] % 60 == 0 && config['seconds'] % 60 == 0) {
     				config['hours'] += 1;
     			}
 				refresh_pointers();
