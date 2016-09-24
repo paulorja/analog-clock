@@ -1,3 +1,45 @@
+
 .analog-clock {
-	background: #ccc;
+  background: #ccc;
+  border-radius:100%;
+  position: relative;
+}
+
+.analog-clock-pointer-out {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform: rotate(0deg);
+}
+
+.analog-clock-pointer {
+  height: 50%;
+  width: 4%;
+  margin-left: 48%;
+  /*background: black;*/
+  display: inline-block;
+}
+
+.analog-clock-hour-pointer {
+	width: 100%;
+	position: relative;
+	height: 100%;
+	display: block;
+	background: black;
+}
+
+.analog-clock-min-pointer {
+	width: 50%;
+	position: relative;
+	height: 100%;
+	display: block;
+	background: black;
+}
+
+.analog-clock-sec-pointer {
+	width: 25%;
+	position: relative;
+	height: 100%;
+	display: block;
+	background: red;
 }
