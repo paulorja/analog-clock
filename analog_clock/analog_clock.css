@@ -77,5 +77,10 @@
 	border-radius: 100%;
 	top: 46%;
 	left: 46%;
-	z-index: 999
+	z-index: 9;
+}
+
+.toggle-clock-btn {
+	z-index: 10;
+	top: 0px;
 }

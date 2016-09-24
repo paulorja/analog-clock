@@ -25,8 +25,7 @@
 								class: class_name
 							})
 						)
-					)
-					;
+					);
 		}
 
 		var hour_pointer = new_pointer('analog-clock-hour-pointer');
@@ -55,6 +54,20 @@
 					});
 		}
 
+		function toggle_clock() {
+			toggle_clock_btn.prev().toggle('slow');
+
+			if(toggle_clock_btn.html() == 'Hide') {
+				toggle_clock_btn.html('Show');
+    		} else {
+				toggle_clock_btn.html('Hide');
+    		}
+		}
+
+		var toggle_clock_btn = $('<button>', {
+			class: 'toggle-clock-btn',
+		}).html('Hide');
+
         //set clock size
         $(this).css({'height': config['size'], 'width': config['size']});
 
@@ -65,6 +78,11 @@
         	$(this).append(seconds_pointer);
         	$(this).append(clock_labels);
         	$(this).append(clock_center);
+        	$(this).after(toggle_clock_btn);
+
+        	toggle_clock_btn.click(function() {
+        		toggle_clock();
+        	});
 
     		refresh_pointers();
     		setInterval(function(){ 
