@@ -1,7 +1,7 @@
 (function($){
 
   $.fn.analogClock = function(settings){
-  	var date = new Date();
+    var date = new Date();
 
     var config = {
       'size': 400,
@@ -15,54 +15,52 @@
     if (settings){$.extend(config, settings);}
 
     function new_pointer(class_name) {
-		  return $('<div>', {
-  			class: 'analog-clock-pointer-out',
-			})
+      return $('<div>', {
+        class: 'analog-clock-pointer-out',
+      })
       .append(
-				$('<div>', {
-					class: 'analog-clock-pointer'
-				})
-				.append(
-					$('<div>', {
-						class: class_name
-					})
-				)
-			);
-	  }
+        $('<div>', {
+          class: 'analog-clock-pointer'
+        })
+        .append(
+          $('<div>', {
+            class: class_name
+          })
+        )
+      );
+    }
 
     var hour_pointer = new_pointer('analog-clock-hour-pointer');
-	  var minutes_pointer = new_pointer('analog-clock-min-pointer');
+    var minutes_pointer = new_pointer('analog-clock-min-pointer');
     var seconds_pointer = new_pointer('analog-clock-sec-pointer');
 
-	  function refresh_pointers() {
-		  hour_pointer.css('transform', 'rotate('+config['hours']*30+'deg)');
-  		minutes_pointer.css('transform', 'rotate('+config['minutes']*6+'deg)');
-  		seconds_pointer.css('transform', 'rotate('+config['seconds']*6+'deg)');
-	  }
+    function refresh_pointers() {
+      hour_pointer.css('transform', 'rotate('+config['hours']*30+'deg)');
+      minutes_pointer.css('transform', 'rotate('+config['minutes']*6+'deg)');
+      seconds_pointer.css('transform', 'rotate('+config['seconds']*6+'deg)');
+    }
 
-	  function clock_labels() {
-		  var clock_labels = "";
+    function clock_labels() {
+       var clock_labels = "";
+       for (var i = 1; i<=12 ; i++) {
+         clock_labels += '<div class="clock-label-out" style="transform: rotate('+(30*i)+'deg);">';
+         clock_labels += '<div class="clock-label" style="transform: rotate(-'+(30*i)+'deg); font-size: '+config['size']*0.08+'px;">'+i+'</div>';
+         clock_labels += '</div>';
+       }
+       return clock_labels;
+     }
 
-		  for (var i = 1; i<=12 ; i++) {
-			  clock_labels += '<div class="clock-label-out" style="transform: rotate('+(30*i)+'deg);">';
-			  clock_labels += '<div class="clock-label" style="transform: rotate(-'+(30*i)+'deg); font-size: '+config['size']*0.08+'px;">'+i+'</div>';
-			  clock_labels += '</div>';
-		  }
+     function clock_center() {
+       return $('<div>', {
+         class: 'clock-center-bg',
+       });
+     }
 
-		  return clock_labels;
-	  }
+     function toggle_clock() {
+       toggle_clock_btn.prev().toggle();
 
-	  function clock_center() {
-		  return $('<div>', {
-  			class: 'clock-center-bg',
-			});
-	  }
-
-  	function toggle_clock() {
-  		toggle_clock_btn.prev().toggle();
-
-  		if(toggle_clock_btn.html() == 'Hide Clock') {
-  			toggle_clock_btn.html('Show Clock');
+       if(toggle_clock_btn.html() == 'Hide Clock') {
+         toggle_clock_btn.html('Show Clock');
   		} else {
   			toggle_clock_btn.html('Hide Clock');
   		}
