@@ -41,4 +41,4 @@ Multi
 https://cdn.rawgit.com/paulorja/analog-clock/master/examples/example3.html
 
 24 hours example
-https://cdn.rawgit.com/paulorja/analog-clock/master/examples/example3.html
+https://cdn.rawgit.com/paulorja/analog-clock/master/examples/example4.html
