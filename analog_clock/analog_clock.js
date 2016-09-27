@@ -10,7 +10,8 @@
       'seconds': date.getSeconds(),
       'speed': 1000,
       'animate': true,
-      'toggleBtn': true
+      'toggleBtn': true,
+      '24hours': false
     };
     if (settings){$.extend(config, settings);}
 
@@ -35,20 +36,38 @@
     var seconds_pointer = new_pointer('analog-clock-sec-pointer');
 
     function refresh_pointers() {
-      hour_pointer.css('transform', 'rotate('+config['hours']*30+'deg)');
+      if(config['24hours']) {
+        hour_pointer.css('transform', 'rotate('+config['hours']*15+'deg)');
+      } else {
+        hour_pointer.css('transform', 'rotate('+config['hours']*30+'deg)');
+      }
       minutes_pointer.css('transform', 'rotate('+config['minutes']*6+'deg)');
       seconds_pointer.css('transform', 'rotate('+config['seconds']*6+'deg)');
     }
 
     function clock_labels() {
-       var clock_labels = "";
-       for (var i = 1; i<=12 ; i++) {
-         clock_labels += '<div class="clock-label-out" style="transform: rotate('+(30*i)+'deg);">';
-         clock_labels += '<div class="clock-label" style="transform: rotate(-'+(30*i)+'deg); font-size: '+config['size']*0.08+'px;">'+i+'</div>';
-         clock_labels += '</div>';
-       }
-       return clock_labels;
-     }
+      var clock_labels = "";
+      if(config['24hours']) {
+        for (var i = 1; i<=24 ; i++) {
+          clock_labels += '<div class="clock-label-out" style="transform: rotate('+(15*i)+'deg);">';
+          clock_labels += '<div class="clock-label" style="transform: rotate(-'+(15*i)+'deg); font-size: '+config['size']*0.08+'px;">'+i+'</div>';
+          clock_labels += '</div>';
+        }
+        for (var i = 1; i<=60 ; i++) {
+          clock_labels += '<div class="clock-label-out-24h" style="transform: rotate('+(6*i)+'deg);">';
+          clock_labels += '<div class="clock-label-24h" style="transform: rotate(-'+(6*i)+'deg); font-size: '+config['size']*0.03+'px;">'+i+'</div>';
+          clock_labels += '</div>';
+        }
+      } else {
+        for (var i = 1; i<=12 ; i++) {
+          clock_labels += '<div class="clock-label-out" style="transform: rotate('+(30*i)+'deg);">';
+          clock_labels += '<div class="clock-label" style="transform: rotate(-'+(30*i)+'deg); font-size: '+config['size']*0.08+'px;">'+i+'</div>';
+          clock_labels += '</div>';
+        }
+      }
+       
+      return clock_labels;
+    }
 
      function clock_center() {
        return $('<div>', {
@@ -61,8 +80,8 @@
 
        if(toggle_clock_btn.html() == 'Hide Clock') {
          toggle_clock_btn.html('Show Clock');
-  		} else {
-  			toggle_clock_btn.html('Hide Clock');
+      } else {
+        toggle_clock_btn.html('Hide Clock');
   		}
   	}
 
