@@ -29,11 +29,16 @@ boolean animate: animate clock
 boolean toggleBtn: show or hide toggle clock btn
 ```
 
-Example 1
+## Examples
+
+Simple
 https://cdn.rawgit.com/paulorja/analog-clock/master/examples/example1.html
 
-Example 2
+Speed
 https://cdn.rawgit.com/paulorja/analog-clock/master/examples/example2.html
 
-Example 3
+Multi
+https://cdn.rawgit.com/paulorja/analog-clock/master/examples/example3.html
+
+24 hours example
 https://cdn.rawgit.com/paulorja/analog-clock/master/examples/example3.html
