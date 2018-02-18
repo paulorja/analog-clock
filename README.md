@@ -1,5 +1,5 @@
 # Jquery Analog Clock
-A analog clock, based on jQuery. [Demo](https://cdn.rawgit.com/paulorja/analog-clock/master/examples/example1.html)
+An analog clock, based on jQuery. [Demo](https://cdn.rawgit.com/paulorja/analog-clock/master/examples/example1.html)
 
 ## Install
 
